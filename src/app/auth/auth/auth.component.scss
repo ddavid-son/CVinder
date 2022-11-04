@@ -19,8 +19,10 @@
     position: relative;
     overflow: hidden;
     width: 50%;
+    background-color: #e6e7f0;
     display: flex;
     align-items: center;
+    border-radius: .6rem 0 0 .6rem;
 
     .bubble {
       width: 100px;
@@ -61,14 +63,16 @@
     }
 
     .position-t-r {
-      right: 4rem;
-      top: -40px;
+      right: 6rem;
+      top: 0;
       z-index: 2;
+      transform: translateY(-45%);
     }
 
     .position-t-rr {
-      right: -20px;
-      top: -1rem;
+      right: 0;
+      top: 0;
+      transform: translate(15%, -13%);
     }
 
     .bubble-size-m {
@@ -82,8 +86,8 @@
     }
 
     .bubble-size-xl {
-      width: 7rem;
-      height: 7rem;
+      width: 10rem;
+      height: 10rem;
     }
 
     .logo-wrapper {
