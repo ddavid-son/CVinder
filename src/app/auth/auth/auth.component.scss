@@ -3,6 +3,7 @@
   display: flex;
   inset: 0;
   background-color: var(--clr-purple-200);
+  overflow: auto;
 
   .container {
     width: clamp(600px, 80%, 1000px);
