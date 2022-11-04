@@ -42,7 +42,7 @@ export class SignupComponent implements OnInit {
     this.passwordIsVisible = !this.passwordIsVisible;
   }
 
-  navigateToSignUp() {
-    this.router.navigate(['auth/signup']);
+  navigateToLogin() {
+    this.router.navigate(['auth/login']);
   }
 }
