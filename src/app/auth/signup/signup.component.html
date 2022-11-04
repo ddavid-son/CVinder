@@ -1,0 +1,35 @@
+<div class="form-wrapper">
+  <span class="sign-up-header">Login</span>
+  <form class="sign-up-form">
+
+    <label>Mail</label>
+    <div class="input-wrapper">
+      <input type="email"
+             [formControl]="emailFormControl"
+             placeholder="Mail">
+    </div>
+
+    <label>Password</label>
+    <div class="input-wrapper">
+      <input [type]="passwordIsVisible ? 'text' : 'password'"
+             placeholder="Password"
+             [formControl]="passwordFormControl">
+      <img alt="show/hide password"
+           [class.muted]="!passwordIsVisible"
+           src="assets/images/icons/closed-eye-icon.png"
+           (click)="togglePasswordVisibility()">
+    </div>
+
+    <label>I am:</label>
+    <div class="input-wrapper">
+      <select style="width: calc(100% - 18px); font-size: var(--fs-300)">
+        <option value="Recruiter" selected="selected">Recruiting</option>
+        <option value="looking">Looking</option>
+      </select>
+      <img  src="assets/images/icons/arrow-down-icon.png" alt="">
+    </div>
+
+    <button class="btn">Sign Up</button>
+    <a class="login-link" (click)="navigateToSignUp()">Back to Login</a>
+  </form>
+</div>

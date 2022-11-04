@@ -1,0 +1,33 @@
+<div class="form-wrapper">
+  <span class="login-header">Login</span>
+  <form class="login-form">
+
+    <label>Mail</label>
+    <div class="input-wrapper">
+      <input type="email"
+             [formControl]="emailFormControl"
+             placeholder="Mail">
+    </div>
+
+    <span class="flex-inline">
+      <label>Password</label>
+      <span class="forgot-password">Forgot-password?</span>
+    </span>
+    <div class="input-wrapper">
+      <input [type]="passwordIsVisible ? 'text' : 'password'"
+             placeholder="Password"
+             [formControl]="passwordFormControl">
+      <img alt="show/hide password"
+           [class.muted]="!passwordIsVisible"
+           src="assets/images/icons/closed-eye-icon.png"
+           (click)="togglePasswordVisibility()">
+    </div>
+
+    <button class="btn btn-primary">Login</button>
+    <div class="horizontal-separator">
+      <span class="horizontal-line"></span>
+      <span class="position-or">OR</span>
+    </div>
+    <a class="sign-up-link" (click)="navigateToSignUp()">Sign up</a>
+  </form>
+</div>

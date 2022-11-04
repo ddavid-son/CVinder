@@ -1,0 +1,115 @@
+.form-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .login-header {
+    font-size: var(--fs-800);
+    line-height: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: -moz-fit-content;
+    min-width: 200px;
+    width: 70%;
+    margin: 0 auto;
+
+    > label {
+      margin-bottom: .3rem;
+      color: var(--clr-blue-800);
+      font-size: var(--fs-300);
+    }
+
+    .flex-inline {
+      display: flex;
+      align-items: center;
+      margin-bottom: .3rem;
+      justify-content: space-between;
+
+      > label {
+        font-size: var(--fs-300);
+      }
+
+      .forgot-password {
+        font-size: var(--fs-200);
+        color: var(--clr-blue-800);
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+    .input-wrapper {
+      margin-bottom: 1rem;
+      border: 1px solid var(--clr-gray-200);
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+
+      > input:-webkit-autofill,
+      > input {
+        -webkit-box-shadow: 0 0 0 30px white inset;
+        border-radius: .5rem;
+        font-size: var(--fs-300);
+        width: calc(100% - 18px);
+      }
+
+      img {
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .muted{
+        opacity: .5;
+      }
+    }
+
+    .btn {
+      padding: .4rem 3rem;
+      color: white;
+      border-radius: 1rem;
+      width: fit-content;
+      background-color: #99eae0;
+      cursor: pointer;
+      margin: 2rem auto 1rem;
+    }
+
+    .horizontal-separator{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      .horizontal-line {
+        content: "";
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        background-color: var(--clr-gray-200);
+      }
+
+      .position-or{
+        display: flex;
+        background-color: white;
+        padding-inline: .5rem;
+        z-index: 1;
+      }
+    }
+
+    .sign-up-link {
+      margin-inline: auto;
+      font-size: var(--fs-300);
+      color: var(--clr-blue-800);
+      cursor: pointer;
+    }
+  }
+}
