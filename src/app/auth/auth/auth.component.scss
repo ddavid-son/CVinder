@@ -30,15 +30,18 @@
     }
 
     .bubble-accent-blue {
-      background-color: #1c2793;
+      // background-color: #1c2793;
+      background: linear-gradient(225deg, #1b2694, #00043c);
     }
 
     .bubble-accent-peach {
-      background-color: var(--clr-peach-200);
+      // background-color: var(--clr-peach-200);
+      background: linear-gradient(225deg, #fcc3ca, #ffa4ad);
     }
 
     .bubble-accent-green {
-      background-color: var(--clr-green-200);
+      // background-color: var(--clr-green-200);
+      background: linear-gradient(225deg, #0ea2b3, #085a6a);
     }
 
     .position-b-r {
@@ -91,15 +94,16 @@
       width: 100%;
       padding: 5rem 3rem;
 
-      .cvinder-logo{
+      .cvinder-logo {
       }
-      .cvinder-title{
+
+      .cvinder-title {
         font-size: var(--fs-800);
       }
     }
   }
 
-  .login-signup-wrapper{
+  .login-signup-wrapper {
     width: 50%;
     padding-block: 3rem;
   }
