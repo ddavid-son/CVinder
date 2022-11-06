@@ -21,14 +21,14 @@
 
     <label>I am:</label>
     <div class="input-wrapper">
-      <select style="width: calc(100% - 18px); font-size: var(--fs-300)">
-        <option value="Recruiter" selected="selected">Recruiting</option>
-        <option value="looking">Looking</option>
+      <select [formControl]="roleFormControl" style="width: calc(100% - 18px); font-size: var(--fs-300)">
+        <option value="Recruiter">Recruiting</option>
+        <option value="Applier">Applying</option>
       </select>
       <img  src="assets/images/icons/arrow-down-icon.png" alt="">
     </div>
 
-    <button class="btn">Sign Up</button>
+    <button type="button" (click)="signUp()" class="btn">Sign Up</button>
     <a class="login-link" (click)="navigateToLogin()">Back to Login</a>
   </form>
 </div>

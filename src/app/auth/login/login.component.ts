@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {LoginDto} from "../../shared/dtos/auth/auth.dtos";
+import {Store} from "@ngrx/store";
+import {loginUser} from "../../store/actions/auth.actions";
 
 @Component({
   selector: 'app-login',
@@ -15,10 +18,16 @@ export class LoginComponent implements OnInit {
   passwordFormControl!: FormControl;
 
   constructor(private fb: FormBuilder,
+              private store:Store,
               private router: Router) {
+    this.initForm();
   }
 
   ngOnInit(): void {
+
+  }
+
+  private initForm(){
     this.emailFormControl = this.fb.control('', [
       Validators.required,
       Validators.email
@@ -42,8 +51,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.loginFrom.value);
-
-
+    const loginDto:LoginDto = {
+      email: this.emailFormControl.value,
+      password: this.passwordFormControl.value
+    }
+    this.store.dispatch(loginUser({loginDto}));
   }
 }
