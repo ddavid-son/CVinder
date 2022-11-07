@@ -9,8 +9,6 @@ export class AuthComponent implements OnInit {
 
   constructor() { }
 
-  bor: string = 'red';
-
   ngOnInit(): void {
   }
 
