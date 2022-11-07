@@ -5,6 +5,7 @@ import {Injectable} from "@angular/core";
 export class StorageService {
 
   setItem(key: string, value: any) {
+    key = "cvinder_" + key;
     try {
       localStorage.setItem(key, JSON.stringify(value));
     } catch (e) {
@@ -13,6 +14,7 @@ export class StorageService {
   }
 
   removeItem(key: string) {
+    key = "cvinder_" + key;
     try {
       localStorage.removeItem(key);
     } catch (e) {
@@ -21,13 +23,10 @@ export class StorageService {
   }
 
   getItem<T>(key: string): T | undefined {
+    key = key ? "cvinder_" + key : key;
     if (!!key && !!localStorage?.getItem(key)) {
       return JSON?.parse(<string>localStorage?.getItem(key));
     }
     return undefined;
-  }
-
-  clearStorage() {
-    localStorage.clear();
   }
 }
