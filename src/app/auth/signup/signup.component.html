@@ -28,7 +28,7 @@
       <img  src="assets/images/icons/arrow-down-icon.png" alt="">
     </div>
 
-    <button type="button" (click)="signUp()" class="btn">Sign Up</button>
+    <button type="button" [class.shake-btn]="(authError$ | async)" (click)="signUp()" class="btn">Sign Up</button>
     <a class="login-link" (click)="navigateToLogin()">Back to Login</a>
   </form>
 </div>

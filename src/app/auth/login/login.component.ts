@@ -3,7 +3,8 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {LoginDto} from "../../shared/dtos/auth/auth.dtos";
 import {Store} from "@ngrx/store";
-import {loginUser} from "../../store/actions/auth.actions";
+import {loginUser, resetError} from "../../store/actions/auth.actions";
+import {selectAuthError} from "../../store/selctors/auth.selectors";
 
 @Component({
   selector: 'app-login',
@@ -17,17 +18,27 @@ export class LoginComponent implements OnInit {
   emailFormControl!: FormControl;
   passwordFormControl!: FormControl;
 
+  authError$ = this.store.select(selectAuthError);
+
   constructor(private fb: FormBuilder,
-              private store:Store,
+              private store: Store,
               private router: Router) {
     this.initForm();
   }
 
   ngOnInit(): void {
+    this.authError$.subscribe((error) => {
+      if (!error) {
+        return;
+      }
+      setTimeout(() => {
+        this.store.dispatch(resetError());
+      }, 700);
+    });
 
   }
 
-  private initForm(){
+  private initForm() {
     this.emailFormControl = this.fb.control('', [
       Validators.required,
       Validators.email
@@ -51,7 +62,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const loginDto:LoginDto = {
+    const loginDto: LoginDto = {
       email: this.emailFormControl.value,
       password: this.passwordFormControl.value
     }

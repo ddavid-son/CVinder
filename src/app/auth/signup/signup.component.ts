@@ -3,7 +3,8 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {SignupDto} from "../../shared/dtos/auth/auth.dtos";
 import {Store} from "@ngrx/store";
-import {registerUser} from "../../store/actions/auth.actions";
+import {registerUser, resetError} from "../../store/actions/auth.actions";
+import {selectAuthError} from "../../store/selctors/auth.selectors";
 
 @Component({
   selector: 'app-signup',
@@ -18,6 +19,8 @@ export class SignupComponent implements OnInit {
   passwordFormControl!: FormControl;
   roleFormControl!: FormControl;
 
+  authError$ = this.store.select(selectAuthError);
+
   constructor(private fb: FormBuilder,
               private store: Store,
               private router: Router) {
@@ -25,6 +28,14 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authError$.subscribe((error) => {
+      if (!error) {
+        return;
+      }
+      setTimeout(() => {
+        this.store.dispatch(resetError());
+      }, 700);
+    });
   }
 
   togglePasswordVisibility() {

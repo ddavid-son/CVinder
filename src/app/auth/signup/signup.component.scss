@@ -75,6 +75,8 @@
       margin: 2rem auto 1rem;
     }
 
+    @import "src/assets/scss/globals";
+
     .login-link{
       text-align: center;
       font-size: var(--fs-300);

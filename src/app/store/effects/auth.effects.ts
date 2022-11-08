@@ -16,7 +16,7 @@ export class AuthEffects {
         this.store.dispatch(setAuthLoading({isLoading: true}))
         return this.authService.logIn(action.loginDto).pipe(
           map((response) => {
-              this.router.navigate(['dashboard']);
+              // this.router.navigate(['main']);
               return authSuccess({...response, isLoading: false})
             }
           ),
@@ -34,7 +34,7 @@ export class AuthEffects {
           this.store.dispatch(setAuthLoading({isLoading: true}))
           return this.authService.signUp(action.signupDto).pipe(
             map((response) => {
-                this.router.navigate(['dashboard']);
+                //this.router.navigate(['main']);
                 return authSuccess({...response, isLoading: false})
               }
             ),
@@ -49,6 +49,7 @@ export class AuthEffects {
   authSuccess$ = createEffect(() =>
     this.actions.pipe(ofType(authSuccess),
       tap((action) => {
+        this.router.navigate(['main']);
         this.storageService.setItem('token', action.token);
       })
     ), {dispatch: false}

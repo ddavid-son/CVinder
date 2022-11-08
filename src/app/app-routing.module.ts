@@ -10,13 +10,12 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    // loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
     loadChildren: () => AuthModule // not lazy loading
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
-  }
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
+  },
 ];
 
 @NgModule({

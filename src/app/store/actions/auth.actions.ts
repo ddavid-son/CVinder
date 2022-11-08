@@ -36,3 +36,7 @@ export const authSuccess = createAction(
   '[Auth] Set Auth Success',
   props<{ user: User, token: string, isLoading: boolean }>()
 );
+
+export const resetError = createAction(
+  '[Auth] Reset Error'
+);

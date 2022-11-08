@@ -67,7 +67,7 @@
         cursor: pointer;
       }
 
-      .muted{
+      .muted {
         opacity: .5;
       }
     }
@@ -82,7 +82,9 @@
       margin: 2rem auto 1rem;
     }
 
-    .horizontal-separator{
+    @import "src/assets/scss/globals";
+
+    .horizontal-separator {
       position: relative;
       display: flex;
       justify-content: center;
@@ -97,7 +99,7 @@
         background-color: var(--clr-gray-200);
       }
 
-      .position-or{
+      .position-or {
         display: flex;
         background-color: white;
         padding-inline: .5rem;

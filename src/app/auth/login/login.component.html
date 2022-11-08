@@ -23,7 +23,7 @@
            (click)="togglePasswordVisibility()">
     </div>
 
-    <button class="btn btn-primary" type='button' (click)="login()">Login</button>
+    <button class="btn btn-primary" [class.shake-btn]="(authError$ | async)" type='button' (click)="login()">Login</button>
     <div class="horizontal-separator">
       <span class="horizontal-line"></span>
       <span class="position-or">OR</span>

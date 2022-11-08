@@ -1,0 +1,22 @@
+<nav [class.closed]="isClosed">
+  <!--  #685CFE-->
+  <div class="side-nav-wrapper">
+    <div class="side-nav-header">
+      <img src="./assets/images/icons/cvinder-icon.png" alt="">
+      <span class="flex-col">
+        <span class="side-nav-title">CVinder</span>
+        <span class="side-nav-subtitle">Find your match</span>
+      </span>
+    </div>
+    <div class="side-nav-links">
+      <a [routerLink]="menuItem?.link"
+         [class.spacer]="i === 4"
+         [class.active]="menuItem.link === selectedMenuItem"
+         (click)="navigateTo(menuItem?.link??'')"
+         *ngFor="let menuItem of menuItems; let i = index;">
+        <img [class.svg-white]="menuItem.link === selectedMenuItem" src="{{menuItem.icon}}" class="svg-black" alt="">
+        <span>{{menuItem.title | titlecase}}</span>
+      </a>
+    </div>
+  </div>
+</nav>

@@ -2,7 +2,7 @@ import {
   authError,
   authSuccess,
   loginUser,
-  registerUser,
+  registerUser, resetError,
   setAuthLoading,
   setToken,
   setUser
@@ -17,5 +17,6 @@ export const authReducer = createReducer(
   on(setToken, (state, {token}) => ({...state, token})),
   on(setUser, (state, {user}) => ({...state, user})),
   on(authSuccess, (state, {user, token, isLoading}) => ({user, token, isLoading})),
-  on(authError, (state, {error}) => ({...state, isLoading:false})),
+  on(authError, (state, {error}) => ({...state, isLoading: false, error})),
+  on(resetError, (state) => ({...state, error: undefined})),
 );
