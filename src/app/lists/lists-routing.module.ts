@@ -6,11 +6,7 @@ import {NgModule} from "@angular/core";
 const routs: Routes = [
   {
     path: '',
-    redirectTo: 'lists',
-    pathMatch: 'full'
-  },
-  {
-    path: 'lists',
+    pathMatch: 'full',
     component: ListsComponent,
   },
 ];

@@ -63,4 +63,8 @@ export class SideBarComponent implements OnInit {
     this.selectedMenuItem = link;
     this.router.navigate(['main/' + link]);
   }
+
+  toggleSideBar() {
+    this.isClosed = !this.isClosed;
+  }
 }
