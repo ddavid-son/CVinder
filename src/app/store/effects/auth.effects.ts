@@ -49,7 +49,7 @@ export class AuthEffects {
   authSuccess$ = createEffect(() =>
     this.actions.pipe(ofType(authSuccess),
       tap((action) => {
-        this.router.navigate(['main']);
+        this.router.navigate(['main']).catch(e => console.error(e));
         this.storageService.setItem('token', action.token);
       })
     ), {dispatch: false}

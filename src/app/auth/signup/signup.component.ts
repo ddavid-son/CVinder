@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
   }
 
   navigateToLogin() {
-    this.router.navigate(['auth/login']);
+    this.router.navigate(['auth/login']).catch(e=>console.error(e));
   }
 
   signUp() {

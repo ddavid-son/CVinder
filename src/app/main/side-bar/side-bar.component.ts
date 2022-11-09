@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 export interface MenuItem {
   title: string;
@@ -32,7 +32,7 @@ export class SideBarComponent implements OnInit {
     },
     {
       title: 'filters',
-      link: 'filter',
+      link: 'filters',
       icon: './assets/images/icons/filters-icon.svg'
     },
     {
@@ -53,7 +53,7 @@ export class SideBarComponent implements OnInit {
   ];
   selectedMenuItem: string = 'dashboard';
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -61,7 +61,7 @@ export class SideBarComponent implements OnInit {
 
   navigateTo(link: string) {
     this.selectedMenuItem = link;
-    this.router.navigate(['main/' + link]);
+    this.router.navigate(['main/' + link]).catch(e => console.error(e));
   }
 
   toggleSideBar() {

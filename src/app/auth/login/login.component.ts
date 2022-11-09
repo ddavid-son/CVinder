@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
   }
 
   navigateToSignUp() {
-    this.router.navigate(['auth/signup']);
+    this.router.navigate(['auth/signup']).catch(e=>console.error(e));
   }
 
   login() {

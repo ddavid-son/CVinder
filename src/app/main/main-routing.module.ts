@@ -19,6 +19,22 @@ const routes: Routes = [
       {
         path: 'lists',
         loadChildren: () => import('../lists/lists.module').then(m => m.ListsModule)
+      },
+      {
+        path: 'history',
+        loadChildren: () => import('../history/history.module').then(m => m.HistoryModule)
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('../settings/settings.module').then(m => m.SettingsModule)
+      },
+      {
+        path: 'chat',
+        loadChildren: () => import('../chat/chat.module').then(m => m.ChatModule)
+      },
+      {
+        path:'filters',
+        loadChildren: () => import('../filters/filters.module').then(m => m.FiltersModule)
       }
     ]
   }

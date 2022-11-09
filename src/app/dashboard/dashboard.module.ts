@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {DashboardRoutingModule} from "./dashboard-routing.module";
 import { CvCardComponent } from './cv-card/cv-card.component';
-import { ControllPanelComponent } from './controll-panel/controll-panel.component';
+import { ControlPanelComponent } from './control-panel/control-panel.component';
 
 
 
@@ -11,7 +11,7 @@ import { ControllPanelComponent } from './controll-panel/controll-panel.componen
   declarations: [
     DashboardComponent,
     CvCardComponent,
-    ControllPanelComponent
+    ControlPanelComponent
   ],
   imports: [
     CommonModule,
