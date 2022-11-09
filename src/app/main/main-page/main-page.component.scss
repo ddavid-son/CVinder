@@ -1,0 +1,15 @@
+.app-border {
+  display: flex;
+  background-color: #E3E9F7;
+  width: 100%;
+  height: 100vh;
+
+  .main-view {
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 25%) 0 0 20px 0;
+    overflow: auto;
+    margin: 0.6rem;
+    width: 100%;
+  }
+}
