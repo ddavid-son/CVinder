@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {DashboardRoutingModule} from "./dashboard-routing.module";
 import { CvCardComponent } from './cv-card/cv-card.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 
@@ -13,9 +14,10 @@ import { ControlPanelComponent } from './control-panel/control-panel.component';
     CvCardComponent,
     ControlPanelComponent
   ],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-  ]
+    imports: [
+        CommonModule,
+        DashboardRoutingModule,
+        SharedModule,
+    ]
 })
 export class DashboardModule { }

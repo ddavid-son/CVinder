@@ -1,0 +1,25 @@
+<div [ngSwitch]="options.type">
+  <div *ngSwitchCase="'password'" class="input-wrapper">
+    <input [type]="isPassword ? 'password' : 'text'"
+           placeholder="Password"
+           [formControl]="formControl">
+    <img alt="show/hide password"
+         [class.muted]="isPassword"
+         src="assets/images/icons/closed-eye-icon.png"
+         (click)="togglePasswordVisibility()">
+  </div>
+
+  <div *ngSwitchCase="'select'" class="input-wrapper">
+    <select [formControl]="formControl" style="width:100%; font-size: var(--fs-300)">
+      <option *ngFor="let op of options.selectOptions" value="{{op.value}}">{{op.text}}</option>
+    </select>
+    <img  src="assets/images/icons/arrow-down-icon.png" alt="">
+  </div>
+
+  <div *ngSwitchDefault class="input-wrapper">
+    <input [type]="options.type?? 'text'"
+           [formControl]="formControl"
+           [placeholder]="options.placeholder ?? ''">
+  </div>
+</div>
+

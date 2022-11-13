@@ -2,14 +2,20 @@
   <span class="sign-up-header">Sign Up</span>
   <form class="sign-up-form">
     <label>Mail</label>
-    <div class="input-wrapper">
+    <app-generic-input [fc]="emailFormControl"
+                       [options]="{type:'email', placeholder:'Mail'}">
+    </app-generic-input>
+    <!--    <div class="input-wrapper">
       <input type="email"
              [formControl]="emailFormControl"
              placeholder="Mail">
-    </div>
+    </div>-->
 
     <label>Password</label>
-    <div class="input-wrapper">
+    <app-generic-input [fc]="passwordFormControl"
+                       [options]="{type:'password', placeholder:'password'}">
+    </app-generic-input>
+    <!--    <div class="input-wrapper">
       <input [type]="passwordIsVisible ? 'text' : 'password'"
              placeholder="Password"
              [formControl]="passwordFormControl">
@@ -17,16 +23,18 @@
            [class.muted]="!passwordIsVisible"
            src="assets/images/icons/closed-eye-icon.png"
            (click)="togglePasswordVisibility()">
-    </div>
+    </div>-->
 
     <label>I am:</label>
-    <div class="input-wrapper">
-      <select [formControl]="roleFormControl" style="width: calc(100% - 18px); font-size: var(--fs-300)">
-        <option value="Recruiter">Recruiting</option>
-        <option value="Applier">Applying</option>
-      </select>
-      <img  src="assets/images/icons/arrow-down-icon.png" alt="">
-    </div>
+    <app-generic-input [fc]="roleFormControl" [options]="{type:'select', selectOptions: roleOptions }"></app-generic-input>
+
+<!--    <div class="input-wrapper">-->
+<!--      <select [formControl]="roleFormControl" style="width: 100%; font-size: var(&#45;&#45;fs-300)">-->
+<!--        <option value="Recruiter">Recruiting</option>-->
+<!--        <option value="Applier">Applying</option>-->
+<!--      </select>-->
+<!--      <img  src="assets/images/icons/arrow-down-icon.png" alt="">-->
+<!--    </div>-->
 
     <button type="button" [class.shake-btn]="(authError$ | async)" (click)="signUp()" class="btn">Sign Up</button>
     <a class="login-link" (click)="navigateToLogin()">Back to Login</a>

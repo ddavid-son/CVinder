@@ -18,6 +18,10 @@ export class SignupComponent implements OnInit {
   emailFormControl!: FormControl;
   passwordFormControl!: FormControl;
   roleFormControl!: FormControl;
+  roleOptions = [
+    {value: 'Recruiter', text: 'Recruiting'},
+    {value: 'Applier', text: 'Applying'},
+  ]
 
   authError$ = this.store.select(selectAuthError);
 

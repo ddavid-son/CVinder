@@ -29,7 +29,7 @@ nav {
       background-color: var(--clr-purple-600);
       right: 0;
       transform: translateX(50%) rotate(180deg);
-
+      transition: transform 0.2s ease-in;
 
       > img {
         height: 0.8rem;
@@ -79,13 +79,12 @@ nav {
         margin-bottom: auto;
       }
 
-      .active {
-        background-color: #695CFE;
-        color: white;
-      }
-
       .svg-black {
         filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7434%) hue-rotate(345deg) brightness(111%) contrast(115%);
+      }
+
+      .svg-white {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(585%) hue-rotate(109deg) brightness(111%) contrast(100%);
       }
 
       > a:hover:not(.active) {
@@ -94,6 +93,7 @@ nav {
 
       .active {
         background-color: #695CFE;
+        color: white;
         transition: all 0.2s ease-in;
       }
 
