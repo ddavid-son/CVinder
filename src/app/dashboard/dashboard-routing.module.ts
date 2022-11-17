@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: DashboardComponent,
+    //component: DashboardComponent,
+    component: ApplierBoardComponent
   },
   {
     path: "applier",

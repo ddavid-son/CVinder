@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./applier-board.component.scss']
 })
 export class ApplierBoardComponent implements OnInit {
+  panelOpenState: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

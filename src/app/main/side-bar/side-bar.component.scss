@@ -40,15 +40,13 @@ nav {
     .side-nav-header {
       width: 100%;
       display: flex;
-      padding-inline: .5rem;
       align-items: center;
       justify-content: flex-start;
       gap: 0.5rem;
       height: 40px;
 
       > img {
-        width: 2rem;
-        height: 2rem;
+        height: 2.3rem;
       }
 
       .flex-col {

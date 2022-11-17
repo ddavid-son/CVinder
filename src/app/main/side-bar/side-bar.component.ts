@@ -57,6 +57,7 @@ export class SideBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.selectedMenuItem = this.router.url.split('/')?.[2];
   }
 
   navigateTo(link: string) {
