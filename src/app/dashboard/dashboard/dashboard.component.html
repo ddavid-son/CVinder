@@ -2,9 +2,10 @@
   <form class="form">
     <div>edit mode switch</div>
 
-    <div class="form-row">
-      <label>Title</label>
-      <input type="text">
+    <div
+      style="display: flex; width: 100%" class="form-row">
+      <app-generic-input [fc]="formControl" [options]="{placeholder: 'title'}"></app-generic-input>
+      <app-generic-input [fc]="formControl" [options]="{placeholder: 'title'}"></app-generic-input>
     </div>
 
     <div class="form-row">
