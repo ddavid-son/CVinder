@@ -5,21 +5,21 @@ import {DashboardRoutingModule} from "./dashboard-routing.module";
 import { CvCardComponent } from './cv-card/cv-card.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import {SharedModule} from "../shared/shared.module";
-import { ApplierBoardComponent } from './applier-board/applier-board.component';
-import {MatExpansionModule} from "@angular/material/expansion";
+import { ApplierBoardComponent } from './applier/applier-board/applier-board.component';
+import { ExperienceComponent } from './applier/experience/experience.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     CvCardComponent,
     ControlPanelComponent,
-    ApplierBoardComponent
+    ApplierBoardComponent,
+    ExperienceComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule,
     SharedModule,
-    MatExpansionModule,
-  ]
+    DashboardRoutingModule,
+  ],
 })
 export class DashboardModule { }

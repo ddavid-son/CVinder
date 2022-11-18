@@ -1,6 +1,11 @@
 <nav [class.closed]="isClosed">
   <div class="side-nav-wrapper">
-    <div (click)="toggleSideBar()" class="circle"><img style="{{isClosed? 'transition: rotate 0.2s ease-in; rotate:180deg;' : ''}}" class="svg-white" src="./assets/images/icons/right-arrow.svg" alt=""></div>
+    <div (click)="toggleSideBar()" class="circle">
+      <img style="{{isClosed? 'transition: rotate 0.2s ease-in; rotate:180deg;' : ''}}"
+           class="svg-white"
+           src="./assets/images/icons/right-arrow.svg"
+           alt="">
+    </div>
     <div class="side-nav-header">
       <img src="./assets/images/cvinder-logo.png" alt="">
       <span class="flex-col">

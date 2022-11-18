@@ -1,0 +1,25 @@
+<div class="resume-container">
+  <span class="header">Your resume</span>
+
+  <mat-expansion-panel [(expanded)]="experiencePanelOpen"
+                       (opened)="experiencePanelOpen= true"
+                       (closed)="experiencePanelOpen = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Previous Experience
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-experience></app-experience>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [(expanded)]="educationPanelOpen"
+                       (opened)="educationPanelOpen= true"
+                       (closed)="educationPanelOpen = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Education
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-experience></app-experience>
+  </mat-expansion-panel>
+</div>

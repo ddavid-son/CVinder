@@ -2,16 +2,22 @@
   margin-bottom: 1rem;
   border: 1px solid var(--clr-gray-200);
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  //padding: 0.5rem;
   display: flex;
   align-items: center;
+
+  padding-inline: 0.5rem;
+  line-height: 2.5rem;
 
   > input:-webkit-autofill,
   > input {
     -webkit-box-shadow: 0 0 0 30px white inset;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     font-size: var(--fs-300);
-    width: calc(100% - 18px);
+    height: 42px;
+    display: flex;
+    width: 100%;
+    align-items: center;
   }
 
   img {

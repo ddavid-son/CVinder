@@ -1,0 +1,42 @@
+<form class="experience-container" [formGroup]="experienceForm">
+  <div class="form-wrapper" *ngFor="let job of experienceArray.controls; let i = index;">
+    <app-generic-input [fc]="getControl(i,'title' )"
+                       [options]="{type:'text', placeholder:'Title'}">
+    </app-generic-input>
+    <div class="row">
+      <app-generic-input style="width: 100%" [fc]="getControl(i,'company')"
+                         [options]="{type: 'text', placeholder:'Company Name'}"></app-generic-input>
+      <app-generic-input style="width: 30%" [fc]="getControl(i,'startDate')"
+                         [options]="{type:'date'}"></app-generic-input>
+      <app-generic-input style="width: 30%" [fc]="getControl(i, 'endDate')"
+                         [options]="{type:'date'}"></app-generic-input>
+    </div>
+    <span *ngIf="respIsEmpty(i)" class="txt-area-title">Responsibilities & Achievements</span>
+    <textarea class="txt-area"
+              [formControl]="getControl(i,'responsibilitiesAndAchievements')"
+              placeholder="Responsibilities & Achievements">
+    </textarea>
+    <mat-form-field class="tool-technology-chips"
+                    appearance="outline">
+      <mat-label>Technologies and Tools</mat-label>
+      <mat-chip-list #chipList
+                     [formControl]="getControl(i,'technologies')">
+        <mat-chip
+          *ngFor="let keyword of getControl(i,'technologies').value"
+          [value]="keyword"
+          (removed)="removeKeyword(i,keyword)">
+          {{keyword}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input
+          placeholder="add tool or technology"
+          [matChipInputFor]="chipList"
+          (matChipInputTokenEnd)="addKeywordFromInput(i, $event)">
+      </mat-chip-list>
+    </mat-form-field>
+    <button class="btn btn-hollow" (click)="removeJob(i)">REMOVE JOB</button>
+  </div>
+  <button class="btn btn-primary" (click)="addJob()">ADD JOB</button>
+</form>
