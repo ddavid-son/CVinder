@@ -7,9 +7,9 @@
       <app-generic-input style="width: 100%" [fc]="getControl(i,'company')"
                          [options]="{type: 'text', placeholder:'Company Name'}"></app-generic-input>
       <app-generic-input style="width: 30%" [fc]="getControl(i,'startDate')"
-                         [options]="{type:'date'}"></app-generic-input>
+                         [options]="{type:'month'}"></app-generic-input>
       <app-generic-input style="width: 30%" [fc]="getControl(i, 'endDate')"
-                         [options]="{type:'date'}"></app-generic-input>
+                         [options]="{type:'month'}"></app-generic-input>
     </div>
     <span *ngIf="respIsEmpty(i)" class="txt-area-title">Responsibilities & Achievements</span>
     <textarea class="txt-area"
