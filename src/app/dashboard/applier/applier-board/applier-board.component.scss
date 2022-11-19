@@ -9,6 +9,13 @@
   .header {
     position: relative;
     font-size: var(--fs-600);
+
+    .slide-toggle {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%)
+    }
   }
 
   .text-area {
@@ -22,7 +29,7 @@
     border: 1px solid var(--clr-gray-200);
   }
 
-  .text-area-title{
+  .text-area-title {
     font-size: var(--fs-400);
     margin-bottom: .5rem;
   }
