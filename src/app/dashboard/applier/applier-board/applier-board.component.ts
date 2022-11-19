@@ -10,6 +10,7 @@ export class ApplierBoardComponent implements OnInit {
   educationPanelOpen: boolean = false;
   linksPanelOpen: boolean = false;
   contactPanelOpen: boolean = false;
+  filePanelOpen: boolean = false;
 
   constructor() { }
 

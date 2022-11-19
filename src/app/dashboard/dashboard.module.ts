@@ -10,6 +10,7 @@ import { ExperienceComponent } from './applier/experience/experience.component';
 import { EducationComponent } from './applier/education/education.component';
 import { ImportantLinksComponent } from './applier/important-links/important-links.component';
 import { ContactInfoComponent } from './applier/contact-info/contact-info.component';
+import { UploadFileComponent } from './applier/upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactInfoComponent } from './applier/contact-info/contact-info.compon
     ExperienceComponent,
     EducationComponent,
     ImportantLinksComponent,
-    ContactInfoComponent
+    ContactInfoComponent,
+    UploadFileComponent
   ],
   imports: [
     CommonModule,

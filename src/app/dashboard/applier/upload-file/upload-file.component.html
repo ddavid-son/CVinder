@@ -1,0 +1,16 @@
+<form class="file-upload-container" [formGroup]="filesForm">
+  <div class="form-wrapper" *ngFor="let link of filesArray.controls; let i = index;">
+
+    <div class="row">
+      <app-generic-input style="width: 40%" [fc]="getControl(i,'type')"
+                         [options]="{type:'select',selectOptions: siteOptions}">
+      </app-generic-input>
+      <app-generic-input style="width: 100%" [fc]="getControl(i,'file')"
+                         [options]="{type:'file', fileType:'image/*,.pdf,.doc,.docx'}">
+      </app-generic-input>
+    </div>
+
+    <button class="btn btn-hollow" (click)="removeFile(i)">REMOVE File</button>
+  </div>
+  <button class="btn btn-primary" (click)="addFile()">ADD File</button>
+</form>

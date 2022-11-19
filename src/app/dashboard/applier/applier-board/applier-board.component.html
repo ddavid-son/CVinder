@@ -1,6 +1,6 @@
 <div class="resume-container">
   <span class="header">
-    Your resume
+    Your Resume
     <app-slide-toggle [title]="'Edit Mode:'" class="slide-toggle"></app-slide-toggle>
   </span>
 
@@ -50,6 +50,18 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <app-contact-info></app-contact-info>
+  </mat-expansion-panel>
+
+  <!--  image upload-->
+  <mat-expansion-panel [(expanded)]="filePanelOpen"
+                       (opened)="filePanelOpen= true"
+                       (closed)="filePanelOpen = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Upload File
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-upload-file></app-upload-file>
   </mat-expansion-panel>
 
   <!--  summary-->

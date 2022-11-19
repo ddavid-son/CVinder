@@ -5,6 +5,9 @@ export interface InputOption {
   placeholder?: string;
   type?: string;
   label?: string;
+  required?: boolean;
+  disabled?: boolean;
+  fileType?: string;
   selectOptions?: { value: string, text: string }[];
 }
 
