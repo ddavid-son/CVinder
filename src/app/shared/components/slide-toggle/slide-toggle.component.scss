@@ -1,0 +1,37 @@
+.slid-toggle-wrapper {
+  display: flex;
+  align-items: center;
+
+  .slider-title{
+    padding-right: .5rem;
+    font-size: var(--fs-200);
+  }
+
+  .slid-toggle {
+    display: flex;
+    padding-left: 3px;
+    align-items: center;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 20px;
+    background-color: var(--clr-gray-200);
+
+    .thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: unset;
+      margin-left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .on {
+      margin-left: calc(100% - 23px);
+      background-color: var(--clr-peach-200);
+    }
+
+    .off {
+      background-color: white;
+    }
+  }
+}

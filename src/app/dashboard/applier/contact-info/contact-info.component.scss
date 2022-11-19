@@ -1,0 +1,33 @@
+.contact-info-container {
+  display: flex;
+  flex-direction: column;
+
+  .form-wrapper {
+    padding-block: .2rem 2rem;
+
+    .row {
+      display: flex;
+      width: 100%;
+      gap: 1rem;
+    }
+  }
+
+  .btn {
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    color: white;
+    background-color: var(--clr-purple-600);
+  }
+
+  .btn-hollow {
+    color: var(--clr-peach-200);
+    padding: .2rem .4rem;
+    font-size: var(--fs-200);
+    border: 1px solid var(--clr-peach-200);
+  }
+}

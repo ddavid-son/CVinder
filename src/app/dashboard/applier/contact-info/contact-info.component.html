@@ -1,1 +1,16 @@
-<p>contact-info works!</p>
+<form class="contact-info-container" [formGroup]="contactInfoForm">
+  <div class="form-wrapper" *ngFor="let link of contactInfoArray.controls; let i = index;">
+
+    <div class="row">
+      <app-generic-input style="width: 40%" [fc]="getControl(i,'method')"
+                         [options]="{type:'select',selectOptions: siteOptions}">
+      </app-generic-input>
+      <app-generic-input style="width: 100%" [fc]="getControl(i,'info')"
+                         [options]="getOptionForGenericInput(i)">
+      </app-generic-input>
+    </div>
+
+    <button class="btn btn-hollow" (click)="removeMethod(i)">REMOVE METHOD</button>
+  </div>
+  <button class="btn btn-primary" (click)="addMethod()">ADD METHOD</button>
+</form>

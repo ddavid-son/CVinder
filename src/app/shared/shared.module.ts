@@ -8,11 +8,13 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatChipsModule} from "@angular/material/chips";
+import { SlideToggleComponent } from './components/slide-toggle/slide-toggle.component';
 
 
 @NgModule({
   declarations: [
-    GenericInput
+    GenericInput,
+    SlideToggleComponent
   ],
   imports: [
     HttpClientModule,
@@ -31,6 +33,7 @@ import {MatChipsModule} from "@angular/material/chips";
     MatFormFieldModule,
     MatIconModule,
     MatChipsModule,
+    SlideToggleComponent,
   ],
   providers: [
     {

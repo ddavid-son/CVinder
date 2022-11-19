@@ -1,0 +1,6 @@
+<div class="slid-toggle-wrapper">
+  <label class="slider-title" *ngIf="title">{{title}}</label>
+  <div (click)="toggle()" class="slid-toggle">
+    <div [class.on]="isOn" [class.off]="!isOn" class="thumb"></div>
+  </div>
+</div>

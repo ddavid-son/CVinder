@@ -1,7 +1,10 @@
 <div class="resume-container">
-  <span class="header">Your resume</span>
+  <span class="header">
+    Your resume
+    <app-slide-toggle [title]="'Edit Mode:'" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%)"></app-slide-toggle>
+  </span>
 
-<!--  experience-->
+  <!--  experience-->
   <mat-expansion-panel [(expanded)]="experiencePanelOpen"
                        (opened)="experiencePanelOpen= true"
                        (closed)="experiencePanelOpen = false">
@@ -13,7 +16,7 @@
     <app-experience></app-experience>
   </mat-expansion-panel>
 
-<!--  education-->
+  <!--  education-->
   <mat-expansion-panel [(expanded)]="educationPanelOpen"
                        (opened)="educationPanelOpen= true"
                        (closed)="educationPanelOpen = false">
@@ -25,7 +28,7 @@
     <app-education></app-education>
   </mat-expansion-panel>
 
-<!--  important links-->
+  <!--  important links-->
   <mat-expansion-panel [(expanded)]="linksPanelOpen"
                        (opened)="linksPanelOpen= true"
                        (closed)="linksPanelOpen = false">
@@ -37,7 +40,7 @@
     <app-important-links></app-important-links>
   </mat-expansion-panel>
 
-<!--  contact me and recommenders-->
+  <!--  contact me and recommenders-->
   <mat-expansion-panel [(expanded)]="contactPanelOpen"
                        (opened)="contactPanelOpen= true"
                        (closed)="contactPanelOpen = false">
@@ -49,7 +52,10 @@
     <app-contact-info></app-contact-info>
   </mat-expansion-panel>
 
-<!--  summary-->
-<textarea></textarea>
-
+  <!--  summary-->
+  <div>
+    <!--    todo: replace with rich text editor-->
+    <label class="text-area-title">summary</label>
+    <textarea class="text-area"></textarea>
+  </div>
 </div>
