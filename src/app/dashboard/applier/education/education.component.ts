@@ -78,8 +78,4 @@ export class EducationComponent implements OnInit {
   removeInstitute(i: number) {
     this.educationArray.removeAt(i);
   }
-
-  respIsEmpty(i: number) {
-    return this.getControl(i, 'coursesAndAchievements').value.length > 0;
-  }
 }

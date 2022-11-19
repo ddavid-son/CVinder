@@ -1,6 +1,7 @@
 <div class="resume-container">
   <span class="header">Your resume</span>
 
+<!--  experience-->
   <mat-expansion-panel [(expanded)]="experiencePanelOpen"
                        (opened)="experiencePanelOpen= true"
                        (closed)="experiencePanelOpen = false">
@@ -12,6 +13,7 @@
     <app-experience></app-experience>
   </mat-expansion-panel>
 
+<!--  education-->
   <mat-expansion-panel [(expanded)]="educationPanelOpen"
                        (opened)="educationPanelOpen= true"
                        (closed)="educationPanelOpen = false">
@@ -22,4 +24,32 @@
     </mat-expansion-panel-header>
     <app-education></app-education>
   </mat-expansion-panel>
+
+<!--  important links-->
+  <mat-expansion-panel [(expanded)]="linksPanelOpen"
+                       (opened)="linksPanelOpen= true"
+                       (closed)="linksPanelOpen = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Important Links
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-important-links></app-important-links>
+  </mat-expansion-panel>
+
+<!--  contact me and recommenders-->
+  <mat-expansion-panel [(expanded)]="contactPanelOpen"
+                       (opened)="contactPanelOpen= true"
+                       (closed)="contactPanelOpen = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Contact me and Recommenders
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-contact-info></app-contact-info>
+  </mat-expansion-panel>
+
+<!--  summary-->
+<textarea></textarea>
+
 </div>

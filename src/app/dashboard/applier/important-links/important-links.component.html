@@ -1,0 +1,16 @@
+<form class="links-container" [formGroup]="linksForm">
+  <div class="form-wrapper" *ngFor="let link of linksArray.controls; let i = index;">
+
+    <div class="row">
+      <app-generic-input style="width: 40%" [fc]="getControl(i,'site')"
+                         [options]="{type:'select',selectOptions: siteOptions}">
+      </app-generic-input>
+      <app-generic-input style="width: 100%" [fc]="getControl(i,'link')"
+                         [options]="{type:'text', placeholder:'Link To Site'}">
+      </app-generic-input>
+    </div>
+
+    <button class="btn btn-hollow" (click)="removeLink(i)">REMOVE LINK</button>
+  </div>
+  <button class="btn btn-primary" (click)="addLink()">ADD LINK</button>
+</form>
