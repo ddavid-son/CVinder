@@ -1,0 +1,43 @@
+<form class="education-container" [formGroup]="educationForm">
+  <div class="form-wrapper" *ngFor="let institute of educationArray.controls; let i = index;">
+
+    <div class="row">
+      <app-generic-input style="width: 100%" [fc]="getControl(i,'type')"
+                         [options]="{type:'select',selectOptions: instituteType}">
+      </app-generic-input>
+      <app-generic-input style="width: 100%" [fc]="getControl(i,'institute')"
+                         [options]="{type:'text', placeholder:'Institute Name'}">
+      </app-generic-input>
+    </div>
+
+    <div class="row">
+      <app-generic-input style="width: 100%" [fc]="getControl(i,'degree')"
+                         [options]="{type: 'text', placeholder:'Degree'}"></app-generic-input>
+      <app-generic-input style="width: 30%" [fc]="getControl(i,'startDate')"
+                         [options]="{type:'month'}"></app-generic-input>
+      <app-generic-input style="width: 30%" [fc]="getControl(i, 'endDate')"
+                         [options]="{type:'month'}"></app-generic-input>
+    </div>
+
+    <mat-form-field class="course-achievement"
+                    appearance="outline">
+      <mat-label>Courses & Achievements</mat-label>
+      <mat-chip-list #chipList
+                     [formControl]="getControl(i,'coursesAndAchievements')">
+        <mat-chip [value]="course"
+                  *ngFor="let course of getControl(i,'coursesAndAchievements').value"
+                  (removed)="removeCourse(i,course)">
+          {{course}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input [matChipInputFor]="chipList"
+               placeholder="add course or achievement"
+               (matChipInputTokenEnd)="addCourseFromInput(i, $event)">
+      </mat-chip-list>
+    </mat-form-field>
+    <button class="btn btn-hollow" (click)="removeInstitute(i)">REMOVE INSTITUTE</button>
+  </div>
+  <button class="btn btn-primary" (click)="addInstitute()">ADD INSTITUTE</button>
+</form>

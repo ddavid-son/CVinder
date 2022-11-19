@@ -5,36 +5,14 @@
     <app-generic-input [fc]="emailFormControl"
                        [options]="{type:'email', placeholder:'Mail'}">
     </app-generic-input>
-    <!--    <div class="input-wrapper">
-      <input type="email"
-             [formControl]="emailFormControl"
-             placeholder="Mail">
-    </div>-->
 
     <label>Password</label>
     <app-generic-input [fc]="passwordFormControl"
                        [options]="{type:'password', placeholder:'password'}">
     </app-generic-input>
-    <!--    <div class="input-wrapper">
-      <input [type]="passwordIsVisible ? 'text' : 'password'"
-             placeholder="Password"
-             [formControl]="passwordFormControl">
-      <img alt="show/hide password"
-           [class.muted]="!passwordIsVisible"
-           src="assets/images/icons/closed-eye-icon.png"
-           (click)="togglePasswordVisibility()">
-    </div>-->
 
     <label>I am:</label>
     <app-generic-input [fc]="roleFormControl" [options]="{type:'select', selectOptions: roleOptions }"></app-generic-input>
-
-<!--    <div class="input-wrapper">-->
-<!--      <select [formControl]="roleFormControl" style="width: 100%; font-size: var(&#45;&#45;fs-300)">-->
-<!--        <option value="Recruiter">Recruiting</option>-->
-<!--        <option value="Applier">Applying</option>-->
-<!--      </select>-->
-<!--      <img  src="assets/images/icons/arrow-down-icon.png" alt="">-->
-<!--    </div>-->
 
     <button type="button" [class.shake-btn]="(authError$ | async)" (click)="signUp()" class="btn">Sign Up</button>
     <a class="login-link" (click)="navigateToLogin()">Back to Login</a>

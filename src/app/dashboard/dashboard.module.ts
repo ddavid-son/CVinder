@@ -7,6 +7,7 @@ import { ControlPanelComponent } from './control-panel/control-panel.component';
 import {SharedModule} from "../shared/shared.module";
 import { ApplierBoardComponent } from './applier/applier-board/applier-board.component';
 import { ExperienceComponent } from './applier/experience/experience.component';
+import { EducationComponent } from './applier/education/education.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ExperienceComponent } from './applier/experience/experience.component';
     CvCardComponent,
     ControlPanelComponent,
     ApplierBoardComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    EducationComponent
   ],
   imports: [
     CommonModule,

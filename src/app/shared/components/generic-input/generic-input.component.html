@@ -1,4 +1,4 @@
-<div [ngSwitch]="options.type">
+<div [ngSwitch]="options.type" [class.muted]="formControl.disabled">
   <div *ngSwitchCase="'password'" class="input-wrapper">
     <input [type]="isPassword ? 'password' : 'text'"
            placeholder="Password"

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 
-interface InputOption {
+export interface InputOption {
   placeholder?: string;
   type?: string;
   label?: string;
@@ -24,6 +24,9 @@ export class GenericInput implements OnInit {
 
   ngOnInit(): void {
     this.isPassword = this.options.type === 'password';
+    if(this.options.type === 'select') {
+      this.formControl.setValue(this.options?.selectOptions?.[0].text);
+    }
   }
 
   togglePasswordVisibility() {
