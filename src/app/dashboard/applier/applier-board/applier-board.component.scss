@@ -34,4 +34,16 @@
     font-size: var(--fs-400);
     margin-bottom: .5rem;
   }
+
+  .btn {
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    color: white;
+    background-color: var(--clr-purple-600);
+  }
 }

@@ -18,7 +18,7 @@
 
   <div *ngSwitchDefault class="input-wrapper">
     <input [type]="options.type?? 'text'"
-           accept="{{options?.fileType ?? ''}}"
+           accept="{{options.fileType ?? ''}}"
            [formControl]="formControl"
            [placeholder]="options.placeholder ?? ''">
   </div>

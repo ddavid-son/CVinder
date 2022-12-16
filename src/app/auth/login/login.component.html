@@ -3,12 +3,6 @@
   <form class="login-form">
 
     <label>Mail</label>
-<!--    <div class="input-wrapper">
-      <input type="email"
-             [formControl]="emailFormControl"
-             placeholder="Mail">
-    </div>-->
-
     <app-generic-input [fc]="emailFormControl"
                        [options]="{type:'email' , placeholder:'email'}" >
     </app-generic-input>
@@ -20,15 +14,6 @@
     <app-generic-input [fc]="passwordFormControl"
                        [options]="{type:'password' , placeholder:'password'}" >
     </app-generic-input>
-<!--    <div class="input-wrapper">-->
-<!--      <input [type]="passwordIsVisible ? 'text' : 'password'"-->
-<!--             placeholder="Password"-->
-<!--             [formControl]="passwordFormControl">-->
-<!--      <img alt="show/hide password"-->
-<!--           [class.muted]="!passwordIsVisible"-->
-<!--           src="assets/images/icons/closed-eye-icon.png"-->
-<!--           (click)="togglePasswordVisibility()">-->
-<!--    </div>-->
 
     <button class="btn btn-primary" [class.shake-btn]="(authError$ | async)" type='button' (click)="login()">Login</button>
     <div class="horizontal-separator">

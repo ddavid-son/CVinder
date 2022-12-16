@@ -12,9 +12,13 @@
     </app-generic-input>
 
     <label>I am:</label>
-    <app-generic-input [fc]="roleFormControl" [options]="{type:'select', selectOptions: roleOptions }"></app-generic-input>
+    <app-generic-input [fc]="roleFormControl"
+                       [options]="{type:'select', selectOptions: roleOptions }">
+    </app-generic-input>
 
-    <button type="button" [class.shake-btn]="(authError$ | async)" (click)="signUp()" class="btn">Sign Up</button>
+    <button type="button" [class.shake-btn]="(authError$ | async)"
+            (click)="signUp()" class="btn">Sign Up
+    </button>
     <a class="login-link" (click)="navigateToLogin()">Back to Login</a>
   </form>
 </div>

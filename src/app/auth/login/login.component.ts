@@ -13,7 +13,6 @@ import {selectAuthError} from "../../store/selctors/auth.selectors";
 })
 export class LoginComponent implements OnInit {
 
-  passwordIsVisible = false;
   loginFrom!: FormGroup;
   emailFormControl!: FormControl;
   passwordFormControl!: FormControl;
@@ -35,7 +34,6 @@ export class LoginComponent implements OnInit {
         this.store.dispatch(resetError());
       }, 700);
     });
-
   }
 
   private initForm() {
@@ -51,10 +49,6 @@ export class LoginComponent implements OnInit {
       email: this.emailFormControl,
       password: this.passwordFormControl
     });
-  }
-
-  togglePasswordVisibility() {
-    this.passwordIsVisible = !this.passwordIsVisible;
   }
 
   navigateToSignUp() {

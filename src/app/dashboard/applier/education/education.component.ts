@@ -71,7 +71,6 @@ export class EducationComponent implements OnInit {
   }
 
   addInstitute() {
-
     this.educationArray.push(this.createInstitute());
   }
 

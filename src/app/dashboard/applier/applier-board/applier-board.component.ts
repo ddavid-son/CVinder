@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Store} from "@ngrx/store";
+import {fetchCV} from "../../../store/actions/cv.actions";
 
 @Component({
   selector: 'app-applier-board',
@@ -12,9 +14,14 @@ export class ApplierBoardComponent implements OnInit {
   contactPanelOpen: boolean = false;
   filePanelOpen: boolean = false;
 
-  constructor() { }
+  constructor(private store:Store) { }
 
   ngOnInit(): void {
+    this.store.dispatch(fetchCV());
+  }
+
+  submitFrom() {
+    console.log('submitting');
 
   }
 }
